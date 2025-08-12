@@ -124,13 +124,11 @@ def updateProfile(request):
         firstname=request.POST.get('firstname')
         lastname=request.POST.get('lastname')
         email=request.POST.get("email")
-        username=request.POST.get('username')
         try:
-            user = User.objects.get(username=username)
+            user = request.user
             user.first_name=firstname
             user.last_name=lastname
             user.email = email
-            user.username=username
             user.save()
         except:
             #prompt

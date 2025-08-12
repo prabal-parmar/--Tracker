@@ -15,11 +15,11 @@
             <li class="list-group-item"><strong>First Name:</strong> <input class="form-input" name="firstname" type="text" value="{{user.first_name}}"></li>
             <li class="list-group-item"><strong>Last Name:</strong> <input type="text" name="lastname" value="{{user.last_name}}"></li>
             <li class="list-group-item"><strong>Email:</strong> <input type="email" name="email" value="{{user.email}}"></li>
-            <li class="list-group-item"><strong>Username:</strong> <input type="text" name="username" value="{{user.username}}"></li>
+            <li class="list-group-item"><strong>Username:</strong> {{user.username}}</li>
             <li class="list-group-item"><strong>Total Expenses:</strong> {{total_expenses}} Rs</li>
             </ul>
             <div class="d-flex justify-content-center">
-                <button type="submit" class="btn btn-primary btn-sm me-2">Edit Profile</button>
+                <button type="submit" class="btn btn-primary btn-sm me-2">Save Changes</button>
             </div>
         </form>
       </div>
