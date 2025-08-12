@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="d-flex justify-content-center my-4">
+  <div class="card text-bg-secondary mb-3" style="max-width: 25rem;">
+    <div class="card-header d-flex justify-content-center"><h2>Add Expense</h2></div>
+    <div class="card-body">
+        <form method="post">
+          {% csrf_token %}
+            <div data-mdb-input-init class="form-outline form-white mb-1">
+              <label for="amount" class="form-label">Amount: </label>
+              <input type="text" id="amount" class="form-control" placeholder="0.00" name="amount" value="{{expense}}">
+            </div>
+            <div data-mdb-input-init class="form-outline form-white mb-1">
+              <label class="form-label" for="reason">Reason: </label>
+              <input type="text" id="reason" class="form-control" name="reason" placeholder="Why did you spent?" value="{{reason}}" />
+            </div>
+            <div data-mdb-input-init class="form-outline form-white mb-1">
+              <label class="form-label" for="date">Date: </label>
+              <input type="date" id="date" class="form-control" name="date" value="{{date}}" />
+            </div>
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-danger my-3">Add +</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
+
+

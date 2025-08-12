@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+<p class="my-3 mx-3">Total expenses till now: {{total_expenses}} Rs</p>
+<div class="d-flex justify-content-center my-3">
+  <h1 class="display-4">All Expenses</h1>
+</div>
+<div class="container py-4 d-flex flex-wrap gap-3">
+  {% for d in data %}
+  <div class="card text-bg-primary" style="width: 18rem;">
+    <div class="card-header">{{ d.reason }}</div>
+    <div class="card-body">
+      <h5 class="card-title">{{ d.expense }}</h5>
+      <p class="card-text">{{ d.date }}</p>
+      <div class="container d-flex flex-wrap gap-3 justify-content-center">
+        <a href="delete/{{d.expense_id}}" class="btn btn-danger btn-sm">Delete</a>
+        <a href="update/{{d.expense_id}}" class="btn btn-warning btn-sm">Update</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endblock body %}

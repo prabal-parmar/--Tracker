@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block body %}
+<div class="container my-5">
+    <div class="card mx-auto" style="max-width: 420px;">
+      <div class="card-body">
+        <div class="text-center mb-3">
+          <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="rounded-circle mb-2" style="width:120px;" alt="Profile">
+          <h4 class="mb-0">{{user.first_name}} {{user.last_name}}</h4>
+          <small class="text-muted">Username: {{user.username}}</small>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <ul class="list-group mb-3">
+            <li class="list-group-item"><strong>First Name:</strong> <input class="form-input" name="firstname" type="text" value="{{user.first_name}}"></li>
+            <li class="list-group-item"><strong>Last Name:</strong> <input type="text" name="lastname" value="{{user.last_name}}"></li>
+            <li class="list-group-item"><strong>Email:</strong> <input type="email" name="email" value="{{user.email}}"></li>
+            <li class="list-group-item"><strong>Username:</strong> <input type="text" name="username" value="{{user.username}}"></li>
+            <li class="list-group-item"><strong>Total Expenses:</strong> {{total_expenses}} Rs</li>
+            </ul>
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary btn-sm me-2">Edit Profile</button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock body %}
